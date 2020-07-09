@@ -274,3 +274,68 @@ Processing by PlaylistsController#index as HTML
 Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 4.2ms | Allocations: 5553)
 
 
+Started GET "/playlists" for ::1 at 2020-07-08 22:30:04 -0400
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 1088)
+
+
+Started GET "/songs" for ::1 at 2020-07-08 22:30:12 -0400
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (2.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 14.2ms | ActiveRecord: 16.4ms | Allocations: 6162)
+
+
+Started GET "/songs" for ::1 at 2020-07-08 22:33:33 -0400
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 1429)
+
+
+Started GET "/songs" for ::1 at 2020-07-08 22:34:02 -0400
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1428)
+
+
+Started GET "/songs" for ::1 at 2020-07-08 22:34:03 -0400
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1428)
+
+
+Started GET "/songs" for ::1 at 2020-07-08 22:39:46 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 12.4ms | ActiveRecord: 6.9ms | Allocations: 6710)
+
+
+Started GET "/songs" for ::1 at 2020-07-08 22:40:08 -0400
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1429)
+
+
+Started GET "/songs" for ::1 at 2020-07-08 22:40:26 -0400
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 1429)
+
+
+Started GET "/songs" for ::1 at 2020-07-08 22:41:36 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 33ms (Views: 21.2ms | ActiveRecord: 7.7ms | Allocations: 6710)
+
+
