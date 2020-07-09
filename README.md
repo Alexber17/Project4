@@ -12,7 +12,7 @@
 ## Project Schedule
 |  Day | Deliverable | Status
 |---|---| ---|
-|7/8/2020| Project Description | Incomplete
+|7/8/2020| Project Description | complete
 |7/8/2020| Wireframes | Incomplete
 |7/8/2020| Work in backend | Incomplete
 |9/8/2020| Work and back and frondend | Incomplete

@@ -12,3 +12,16 @@ rails generate scaffold Songs title artist_name url
 cd songs_app_api
 
 rails s
+
+--------------------------------------------------------------------
+npx create-react-app playlist_client
+
+cd playlist_client
+
+rm -rf .git
+
+mkdir src/components
+
+touch src/components/Playlist.js
+
+npm start
