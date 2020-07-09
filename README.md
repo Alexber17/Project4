@@ -1,12 +1,12 @@
 
 ## User stories
 
-*User can create a playlist 
-*User can delete a playlist
-*User can update a playlist
-*User can add songs to a playlist
-*User can delete songs from a playlist
-*User can update songs
+* User can create a playlist. 
+* User can delete a playlist.
+* User can update a playlist.
+* User can add songs to a playlist.
+* User can delete songs from a playlist.
+* User can update songs.
 
 
 ## Project Schedule
