@@ -1,0 +1,14 @@
+rails new playlist_api --api --skip-git -d postgresql 
+
+
+rails db:create
+
+
+rails generate scaffold Playlist name id:integer 
+
+rails generate scaffold Songs title artist_name url
+
+
+cd songs_app_api
+
+rails s
