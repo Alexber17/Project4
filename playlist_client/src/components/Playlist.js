@@ -16,6 +16,7 @@ class Playlist extends Component {
         title:'',
         url:'',
         songPlay:'',
+        songId:'',
         
 
         show:true
@@ -25,6 +26,7 @@ class Playlist extends Component {
     componentDidMount() {
         this.getPlaylist()
     }
+
     getPlaylist = () =>{
         fetch('http://localhost:3000/playlists')
             .then(response => response.json())
@@ -32,9 +34,11 @@ class Playlist extends Component {
             .then(playlist => console.log(this.state.playlist))
         .catch(error => console.error(error))
     }
+
     handleChange=(event)=>{
       this.setState({[event.target.id]:event.target.value})
-  }
+    }
+
     handleSubmit= event =>{
       event.preventDefault();
       fetch('http://localhost:3000/playlists',{
@@ -55,13 +59,15 @@ class Playlist extends Component {
         })
     })
     }
+
     handleSubmitSong= event =>{
       event.preventDefault();
       fetch('http://localhost:3000/songs',{
           body: JSON.stringify({
-          artist_name :this.state.nameplay,
+          artist_name :this.state.artist_name,
           title:this.state.title,
-          url:this.state.url
+          url:this.state.url,
+          playlist_id:this.state.songPlay
          }),
           method:"POST",
           headers: {
@@ -69,12 +75,29 @@ class Playlist extends Component {
               'Content-Type': 'application/json'
             }
       }).then(response=> response.json())
+        .then(json=> this.setState({songId:json.id}))
+        .then(
+          fetch('http://localhost:3000/ledgers',{
+            body: JSON.stringify({
+            song_id: this.state.songId,
+            playlist_id:this.state.songPlay
+           }),
+            method:"POST",
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+              }
+        })
+        )
       .then(newTodo=>{
         this.setState({
           // playlist:[newTodo, ...this.state.playlist],
           artist_name:'',
           title:'',
-          url:''
+          url:'',
+          songId:'',
+          playlist_id:''
+
 
         })
     })
