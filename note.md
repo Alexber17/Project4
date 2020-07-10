@@ -32,4 +32,7 @@ ap Ledger.create(playlist_id:1,song_id:3)
 
 # Show the elemet of the playlist 1
 ap Playlist.find(1).songs
+---------------------------------------------------------------------
+# Show playlist of that elemen belong to  
 
+ap Song.find(4).playlists

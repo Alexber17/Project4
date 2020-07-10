@@ -71,6 +71,21 @@ class Playlist extends Component {
 
           </div>
 
+
+          <div>
+            <h1>  Create Playlist </h1>
+            <form onSubmit={this.handleSubmit}>
+                    <div className="form-group row">
+                        <lable htmlFor='name' className='col-sm-1 col-form-label' >Description:</lable>
+                        <div class="col-sm-11">
+                            <input type='text'  required value={this.state.nameplay} className='form-control' id='nameplay' onChange={this.handleChange}/>
+                        </div>
+                    </div> 
+                    <button type="submit" class="btn btn-primary"> Create </button>
+            </form>
+
+          </div>
+
            <h1>Playlist</h1>
           <ul>
           {this.state.playlist.length > 0 && this.state.playlist.map((list, index) => {
