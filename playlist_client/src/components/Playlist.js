@@ -10,6 +10,7 @@ class Playlist extends Component {
  	
     state = {
         playlist: [],
+        nameplay:'',
         show:true
     }
     
@@ -24,12 +25,52 @@ class Playlist extends Component {
             .then(playlist => console.log(this.state.playlist))
         .catch(error => console.error(error))
     }
+    handleChange=(event)=>{
+      this.setState({[event.target.id]:event.target.value})
+  }
+    handleSubmit= event =>{
+      event.preventDefault();
+      fetch('http://localhost:3000/playlists',{
+          body: JSON.stringify({
+          name:this.state.nameplay}),
+          method:"POST",
+          headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            }
+      }).then(response=> response.json())
+      .then(newTodo=>{
+        this.setState({
+          playlist:[newTodo, ...this.state.playlist],
+            name:''
+            
+        })
+    })
+    }
+
+
+
+
 
 
     render () {
       return (
 
         <div>
+          <div>
+            <h1>  Create Playlist </h1>
+            <form onSubmit={this.handleSubmit}>
+                    <div className="form-group row">
+                        <lable htmlFor='name' className='col-sm-1 col-form-label' >Description:</lable>
+                        <div class="col-sm-11">
+                            <input type='text'  required value={this.state.nameplay} className='form-control' id='nameplay' onChange={this.handleChange}/>
+                        </div>
+                    </div> 
+                    <button type="submit" class="btn btn-primary"> Create </button>
+            </form>
+
+          </div>
+
            <h1>Playlist</h1>
           <ul>
           {this.state.playlist.length > 0 && this.state.playlist.map((list, index) => {
@@ -40,11 +81,10 @@ class Playlist extends Component {
                </div>
               )
           })}
-               
-               
-               
-
         </ul>
+
+
+
         </div>
        
       )
