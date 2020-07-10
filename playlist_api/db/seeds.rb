@@ -30,7 +30,12 @@ Playlist.create([
 
     {
         "name": "The Top 50"
+    },
+
+    {
+        "name": "The Top 10 80's"
     }
+
 
 
 ])
