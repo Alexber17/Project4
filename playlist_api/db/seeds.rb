@@ -34,3 +34,5 @@ Playlist.create([
 
 
 ])
+
+puts "Seeded database"
