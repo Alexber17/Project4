@@ -8,7 +8,7 @@ rails generate scaffold Playlist name id:integer
 
 rails generate scaffold Songs title artist_name url
 
-
+rails g scaffold ledger playlist:references song:references 
 cd songs_app_api
 
 rails s
@@ -25,3 +25,11 @@ mkdir src/components
 touch src/components/Playlist.js
 
 npm start
+---------------------------------------------------------------------
+
+# Add a song in playlist
+ap Ledger.create(playlist_id:1,song_id:3)
+
+# Show the elemet of the playlist 1
+ap Playlist.find(1).songs
+
