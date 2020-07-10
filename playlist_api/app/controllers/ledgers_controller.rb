@@ -5,7 +5,7 @@ class LedgersController < ApplicationController
   def index
     @ledgers = Ledger.all
 
-    render json: @ledgers
+    render json: @ledgers.to_json(include: [:song, :playlist])
   end
 
   # GET /ledgers/1

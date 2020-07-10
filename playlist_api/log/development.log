@@ -430,3 +430,92 @@ Completed 200 OK in 21ms (Views: 11.6ms | ActiveRecord: 6.4ms | Allocations: 671
   [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 3]]
   [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
   [1m[36mPlaylist Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1 LIMIT $2[0m  [["song_id", 4], ["LIMIT", 1]]
+Started GET "/playlists" for ::1 at 2020-07-09 21:40:04 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 4.3ms | Allocations: 7264)
+
+
+Started GET "/playlists/1" for ::1 at 2020-07-09 21:40:10 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:44:in `set_playlist'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1569)
+
+
+Started GET "/playlists/1" for ::1 at 2020-07-09 21:41:10 -0400
+Processing by PlaylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:44:in `set_playlist'
+  [1m[36mSong Load (1.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:13:in `show'
+Completed 200 OK in 49ms (Views: 0.1ms | ActiveRecord: 11.3ms | Allocations: 21513)
+
+
+Started GET "/playlists/" for ::1 at 2020-07-09 21:42:26 -0400
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 981)
+
+
+Started GET "/ledgers" for ::1 at 2020-07-09 21:43:27 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (0.6ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 3.7ms | Allocations: 4544)
+
+
+Started GET "/ledgers" for ::1 at 2020-07-09 21:43:42 -0400
+  
+SyntaxError (/Users/alex/Desktop/Code/project-4/playlist_api/app/controllers/ledgers_controller.rb:9: syntax error, unexpected keyword_end, expecting ']'
+  end
+  ^~~
+/Users/alex/Desktop/Code/project-4/playlist_api/app/controllers/ledgers_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/ledgers_controller.rb:9: syntax error, unexpected keyword_end, expecting ']'
+app/controllers/ledgers_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/ledgers_controller.rb:9: syntax error, unexpected keyword_end, expecting ']'
+app/controllers/ledgers_controller.rb:51: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/ledgers" for ::1 at 2020-07-09 21:44:18 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mCACHE Playlist Load (0.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mCACHE Playlist Load (0.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 8.1ms | Allocations: 23183)
+
+
+Started GET "/ledgers" for ::1 at 2020-07-09 21:44:20 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (0.4ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mCACHE Playlist Load (0.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+  [1m[36mCACHE Playlist Load (0.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 6797)
+
+
