@@ -5,12 +5,12 @@ class PlaylistsController < ApplicationController
   def index
     @playlists = Playlist.all
 
-    render json: @playlists
+    render json: @playlists.to_json(include: :songs)
   end
 
   # GET /playlists/1
   def show
-    render json: @playlist.to_json(include: :songs)
+    render json: @playlists.to_json(include: :songs)
   end
 
   # POST /playlists
