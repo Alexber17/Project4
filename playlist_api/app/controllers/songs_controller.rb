@@ -5,12 +5,12 @@ class SongsController < ApplicationController
   def index
     @songs = Song.all
 
-    render json: @songs
+    render json: @songs.to_json(include: :playlists)
   end
 
   # GET /songs/1
   def show
-    render json: @song
+    render json: @song.to_json(include: :playlists)
   end
 
   # POST /songs
@@ -18,7 +18,7 @@ class SongsController < ApplicationController
     @song = Song.new(song_params)
 
     if @song.save
-      render json: @song, status: :created, location: @song
+      render json: @song.to_json(include: :ledgers) , status: :created, location: @song
     else
       render json: @song.errors, status: :unprocessable_entity
     end

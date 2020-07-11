@@ -5,11 +5,13 @@ class LedgersController < ApplicationController
   def index
     @ledgers = Ledger.all
 
-    render json: @ledgers.to_json(include: [:song, :playlist])
+    # render json: @ledger.to_json(), status: :created, location: @ledger
+    render json: @ledgers
   end
 
   # GET /ledgers/1
   def show
+    
     render json: @ledger
   end
 
