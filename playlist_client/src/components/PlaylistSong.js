@@ -18,7 +18,7 @@ class PlaylistSong extends Component{
                   
                     return(
                         <div key={Math.random()*1000} className='join'>
-                        <h3>Title:{song.title}</h3>
+                        <h3>  <a href={song.url}>Title:{song.title}</a>  </h3>
                         <h4>Artist:{song.artist_name}</h4>
                         </div>
                     )

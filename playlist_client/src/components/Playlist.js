@@ -150,18 +150,18 @@ class Playlist extends Component {
             <h1>  Add Song </h1>
             <form onSubmit={this.handleSubmitSong}>
                     <div className="form-group row">
-                        <label htmlFor='name' className='col-sm-1 col-form-label' >artist_name:</label>
+                        <label htmlFor='name' className='col-sm-1 col-form-label' >Artist:</label>
                         <div className="col-sm-11">
                             <input type='text'  required value={this.state.artist_name} className='form-control' id='artist_name' onChange={this.handleChange}/>
                         </div>
 
-                        <label htmlFor='name' className='col-sm-1 col-form-label' >title:</label>
+                        <label htmlFor='name' className='col-sm-1 col-form-label' >Title:</label>
                         <div className="col-sm-11">
                             <input type='text'  required value={this.state.title} className='form-control' id='title' onChange={this.handleChange}/>
                         </div>
-                        <label htmlFor='name' className='col-sm-1 col-form-label' >url:</label>
+                        <label htmlFor='name' className='col-sm-1 col-form-label' >Url:</label>
                         <div className="col-sm-11">
-                            <input type='text'  required value={this.state.url} className='form-control' id='url' onChange={this.handleChange}/>
+                            <input type='text'   value={this.state.url} className='form-control' id='url' onChange={this.handleChange}/>
                         </div>
 
                         <label htmlFor='name' className='col-sm-1 col-form-label' >Playlist:</label>
