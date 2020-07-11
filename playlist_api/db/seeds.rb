@@ -27,17 +27,24 @@ Song.create([
 
 
 Playlist.create([
-
     {
         "name": "The Top 50"
     },
-
     {
         "name": "The Top 10 80's"
     }
+])
 
-
-
+Ledger.create([
+    {
+        "playlist_id":1,
+        "song_id":1
+    },
+    {
+        "playlist_id":1,
+        "song_id":2
+    },
+   
 ])
 
 puts "Seeded database"

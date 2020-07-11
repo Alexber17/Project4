@@ -31,7 +31,7 @@ class Playlist extends Component {
         fetch('http://localhost:3000/playlists')
             .then(response => response.json())
             .then(json => this.setState({playlist: json}))
-            .then(playlist => console.log(this.state.playlist))
+            // .then(playlist => console.log(this.state.playlist))
         .catch(error => console.error(error))
     }
 
@@ -60,7 +60,7 @@ class Playlist extends Component {
     })
     }
 
-    handleSubmitSong= event =>{
+    handleSubmitSong = event =>{
       event.preventDefault();
       fetch('http://localhost:3000/songs',{
           body: JSON.stringify({
@@ -76,7 +76,8 @@ class Playlist extends Component {
             }
       }).then(response=> response.json())
         .then(json=> this.setState({songId:json.id}))
-        .then(
+        // .then(json=> console.log(json.id))
+        .then(()=>{
           fetch('http://localhost:3000/ledgers',{
             body: JSON.stringify({
             song_id: this.state.songId,
@@ -88,24 +89,43 @@ class Playlist extends Component {
                 'Content-Type': 'application/json'
               }
         })
-        )
+      })
       .then(newTodo=>{
+				let currentIndex;
+				const currentPlaylist = this.state.playlist.filter((list,index) => {
+				if (list.id == this.state.songPlay){
+         currentIndex = index
+          return true
+         } else {
+          return false
+        }
+        })
+        console.log(currentPlaylist)
+        console.log(currentIndex)
+				currentPlaylist[0].songs.push({artist_name :this.state.artist_name,
+                    title:this.state.title,
+                    url:this.state.url})
+				const playlist1 = this.state.playlist.slice(0,currentIndex)
+        const playlist2 = this.state.playlist.slice(currentIndex)
+				playlist2[0] = currentPlaylist[0]
         this.setState({
-          // playlist:[newTodo, ...this.state.playlist],
+          playlist:[...playlist1, ...playlist2],
           artist_name:'',
           title:'',
           url:'',
           songId:'',
-          playlist_id:''
-
-
         })
     })
     }
 
     
 
-
+    handleClick = event => {
+   
+      this.setState({ shown: !this.state.shown })
+      
+    }
+    
 
 
 
@@ -118,52 +138,48 @@ class Playlist extends Component {
             <h1>  Create Playlist </h1>
             <form onSubmit={this.handleSubmit}>
                     <div className="form-group row">
-                        <lable htmlFor='name' className='col-sm-1 col-form-label' >Description:</lable>
-                        <div class="col-sm-11">
+                        
+                        <div className="col-sm-11">
                             <input type='text'  required value={this.state.nameplay} className='form-control' id='nameplay' onChange={this.handleChange}/>
                         </div>
                     </div> 
-                    <button type="submit" class="btn btn-primary"> Create </button>
+                    <button type="submit" className="btn btn-primary"> Create </button>
             </form>
           </div>
           <div>
             <h1>  Add Song </h1>
             <form onSubmit={this.handleSubmitSong}>
                     <div className="form-group row">
-                        <lable htmlFor='name' className='col-sm-1 col-form-label' >artist_name:</lable>
-                        <div class="col-sm-11">
+                        <label htmlFor='name' className='col-sm-1 col-form-label' >artist_name:</label>
+                        <div className="col-sm-11">
                             <input type='text'  required value={this.state.artist_name} className='form-control' id='artist_name' onChange={this.handleChange}/>
                         </div>
 
-                        <lable htmlFor='name' className='col-sm-1 col-form-label' >title:</lable>
-                        <div class="col-sm-11">
+                        <label htmlFor='name' className='col-sm-1 col-form-label' >title:</label>
+                        <div className="col-sm-11">
                             <input type='text'  required value={this.state.title} className='form-control' id='title' onChange={this.handleChange}/>
                         </div>
-                        <lable htmlFor='name' className='col-sm-1 col-form-label' >url:</lable>
-                        <div class="col-sm-11">
+                        <label htmlFor='name' className='col-sm-1 col-form-label' >url:</label>
+                        <div className="col-sm-11">
                             <input type='text'  required value={this.state.url} className='form-control' id='url' onChange={this.handleChange}/>
                         </div>
 
-                        <lable htmlFor='name' className='col-sm-1 col-form-label' >Playlist:</lable>
-                        <div class="col-sm-11">
+                        <label htmlFor='name' className='col-sm-1 col-form-label' >Playlist:</label>
+                        <div className="col-sm-11">
                        
                             {/* <input    required  className='form-control'  onChange={this.handleChange}/> */}
-                            <input type='text'  required value={this.state.songPlay} className='form-control' id='songPlay' />
-                            <select type='text' id='songPlay' name="pets" onChange={this.handleChange}>
-                                <option value="">--Please choose an option--</option>
+                            {/* <input type='text'  required className='form-control' id='songPlay' /> */}
+                            <select type='text' id='songPlay'  value={this.state.songPlay}  onChange={this.handleChange}>
+                                <option >--Please choose an option--</option>
                                 {this.state.playlist.length > 0 && this.state.playlist.map((list, index) => {
-                                        return (
-                                        <>
-                                      <option value={list.id}>{list.name}</option>
-                                      </>
-                                        )
-                                    })}
+
+                                        return (  <option key={list.id} value={list.id}>{list.name}</option>  ) })}
     
                             </select>
                         </div>
 
                     </div> 
-                    <button type="submit" class="btn btn-primary"> Create </button>
+                    <button type="submit" className="btn btn-primary"> Create </button>
             </form>
           </div>
 
@@ -174,8 +190,8 @@ class Playlist extends Component {
           <ul>
           {this.state.playlist.length > 0 && this.state.playlist.map((list, index) => {
               return (
-              <div>
-              <button onClick={() => this.setState({ shown: !this.state.shown })} >{list.name}</button>
+              <div key={Math.random()*1000} >
+              <button onClick={(event)=> this.handleClick() } >{list.name}</button>
               {/* <button onClick={() => thiisshow } >{list.name}</button> */}
               {this.state.shown ? <PlaylistSong item={list}/> : ''}  
                </div>

@@ -18,7 +18,7 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.new(playlist_params)
 
     if @playlist.save
-      render json: @playlist, status: :created, location: @playlist
+      render json: @playlist.to_json(include: :songs), status: :created, location: @playlist
     else
       render json: @playlist.errors, status: :unprocessable_entity
     end
