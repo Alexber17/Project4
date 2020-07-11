@@ -13243,3 +13243,26 @@ Processing by PlaylistsController#create as HTML
 Completed 201 Created in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3691)
 
 
+Started GET "/playlists" for ::1 at 2020-07-11 11:50:35 -0400
+Processing by PlaylistsController#index as */*
+  [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (32.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (8.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (1.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 5]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (1.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 6]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (3.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 7]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 8]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 80ms (Views: 0.1ms | ActiveRecord: 49.3ms | Allocations: 17714)
+
+
