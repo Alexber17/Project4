@@ -13670,3 +13670,397 @@ Processing by PlaylistsController#index as */*
 Completed 200 OK in 62ms (Views: 0.2ms | ActiveRecord: 11.5ms | Allocations: 26614)
 
 
+Started GET "/songs" for ::1 at 2020-07-11 13:14:44 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 1]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 2]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 3]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 4]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 5]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 6]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 7]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 8]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 9]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 10]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 11]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" INNER JOIN "ledgers" ON "playlists"."id" = "ledgers"."playlist_id" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 12]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 78ms (Views: 0.1ms | ActiveRecord: 10.8ms | Allocations: 37480)
+
+
+Started GET "/ledgers" for ::1 at 2020-07-11 13:16:26 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  ↳ app/controllers/ledgers_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 2.0ms | Allocations: 5340)
+
+
+Started GET "/playlists" for ::1 at 2020-07-11 13:17:25 -0400
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 6219)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (40.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "playlist_api_development"[0m
+  [1m[35m (33.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "playlist_api_test"[0m
+  [1m[35m (126.7ms)[0m  [1m[35mCREATE DATABASE "playlist_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (59.5ms)[0m  [1m[35mCREATE DATABASE "playlist_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "ledgers" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "ledgers" ("id" bigserial primary key, "playlist_id" bigint NOT NULL, "song_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_ledgers_on_playlist_id" ON "ledgers"  ("playlist_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_ledgers_on_song_id" ON "ledgers"  ("song_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "playlists" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "playlists" ("id" bigserial primary key, "name" character varying, "table_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "artist_name" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "ledgers" ADD CONSTRAINT "fk_rails_9c435c7ec7"
+FOREIGN KEY ("playlist_id")
+  REFERENCES "playlists" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "ledgers" ADD CONSTRAINT "fk_rails_1b80cea361"
+FOREIGN KEY ("song_id")
+  REFERENCES "songs" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200710010901)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200709013413),
+(20200709013422);
+
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-11 17:18:04.669493"], ["updated_at", "2020-07-11 17:18:04.669493"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "fbd0945aebade152d3d9d163fb4908a9029512c9"], ["created_at", "2020-07-11 17:18:04.677846"], ["updated_at", "2020-07-11 17:18:04.677846"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "ledgers" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ledgers" ("id" bigserial primary key, "playlist_id" bigint NOT NULL, "song_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_ledgers_on_playlist_id" ON "ledgers"  ("playlist_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_ledgers_on_song_id" ON "ledgers"  ("song_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "playlists" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "playlists" ("id" bigserial primary key, "name" character varying, "table_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "artist_name" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "ledgers" ADD CONSTRAINT "fk_rails_9c435c7ec7"
+FOREIGN KEY ("playlist_id")
+  REFERENCES "playlists" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "ledgers" ADD CONSTRAINT "fk_rails_1b80cea361"
+FOREIGN KEY ("song_id")
+  REFERENCES "songs" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200710010901)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200709013413),
+(20200709013422);
+
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-11 17:18:04.748265"], ["updated_at", "2020-07-11 17:18:04.748265"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-07-11 17:18:04.758878"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "fbd0945aebade152d3d9d163fb4908a9029512c9"], ["created_at", "2020-07-11 17:18:04.767447"], ["updated_at", "2020-07-11 17:18:04.767447"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "One"], ["artist_name", "U2"], ["created_at", "2020-07-11 17:18:04.833512"], ["updated_at", "2020-07-11 17:18:04.833512"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Billie Jean"], ["artist_name", "Michael Jackson"], ["created_at", "2020-07-11 17:18:04.840623"], ["updated_at", "2020-07-11 17:18:04.840623"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Like A Rolling Stone"], ["artist_name", "Bob Dylan"], ["created_at", "2020-07-11 17:18:04.844990"], ["updated_at", "2020-07-11 17:18:04.844990"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Don't Stop Believin'"], ["artist_name", "Journey"], ["created_at", "2020-07-11 17:18:04.848834"], ["updated_at", "2020-07-11 17:18:04.848834"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "You Shook Me All Night Long"], ["artist_name", "AC/DC"], ["created_at", "2020-07-11 17:18:04.852742"], ["updated_at", "2020-07-11 17:18:04.852742"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Love Shack"], ["artist_name", "B-52's"], ["created_at", "2020-07-11 17:18:04.857398"], ["updated_at", "2020-07-11 17:18:04.857398"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Thriller"], ["artist_name", "Michael Jackson\t"], ["created_at", "2020-07-11 17:18:04.861414"], ["updated_at", "2020-07-11 17:18:04.861414"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "I Wanna Dance With Somebody (Who Loves Me)"], ["artist_name", "Whitney Houston"], ["created_at", "2020-07-11 17:18:04.864832"], ["updated_at", "2020-07-11 17:18:04.864832"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Girls Just Want To Have Fun"], ["artist_name", "Cyndi Lauper"], ["created_at", "2020-07-11 17:18:04.868566"], ["updated_at", "2020-07-11 17:18:04.868566"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Summer Of 69"], ["artist_name", "Bryan Adams"], ["created_at", "2020-07-11 17:18:04.872156"], ["updated_at", "2020-07-11 17:18:04.872156"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sunday Best"], ["artist_name", "Surfaces"], ["url", "https://www.youtube.com/watch?v=_83KqwEEGw4"], ["created_at", "2020-07-11 17:18:04.875518"], ["updated_at", "2020-07-11 17:18:04.875518"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Toosie Slide"], ["artist_name", "Drake"], ["url", "https://www.youtube.com/watch?v=xWggTb45brM"], ["created_at", "2020-07-11 17:18:04.878761"], ["updated_at", "2020-07-11 17:18:04.878761"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Create (0.4ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "The Top 5"], ["created_at", "2020-07-11 17:18:04.890628"], ["updated_at", "2020-07-11 17:18:04.890628"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Create (0.2ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "The Top 10 80's"], ["created_at", "2020-07-11 17:18:04.894477"], ["updated_at", "2020-07-11 17:18:04.894477"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Create (0.2ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Top 2020"], ["created_at", "2020-07-11 17:18:04.897746"], ["updated_at", "2020-07-11 17:18:04.897746"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.9ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 2], ["song_id", 1], ["created_at", "2020-07-11 17:18:04.921921"], ["updated_at", "2020-07-11 17:18:04.921921"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.4ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 2], ["song_id", 2], ["created_at", "2020-07-11 17:18:04.932613"], ["updated_at", "2020-07-11 17:18:04.932613"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.3ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 2], ["song_id", 3], ["created_at", "2020-07-11 17:18:04.939367"], ["updated_at", "2020-07-11 17:18:04.939367"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.3ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 2], ["song_id", 4], ["created_at", "2020-07-11 17:18:04.945649"], ["updated_at", "2020-07-11 17:18:04.945649"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.3ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 1], ["song_id", 5], ["created_at", "2020-07-11 17:18:04.952532"], ["updated_at", "2020-07-11 17:18:04.952532"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.3ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 1], ["song_id", 6], ["created_at", "2020-07-11 17:18:04.959134"], ["updated_at", "2020-07-11 17:18:04.959134"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.3ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 1], ["song_id", 7], ["created_at", "2020-07-11 17:18:04.966748"], ["updated_at", "2020-07-11 17:18:04.966748"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.3ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 1], ["song_id", 8], ["created_at", "2020-07-11 17:18:04.972900"], ["updated_at", "2020-07-11 17:18:04.972900"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.2ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 3], ["song_id", 11], ["created_at", "2020-07-11 17:18:04.979168"], ["updated_at", "2020-07-11 17:18:04.979168"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.2ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 3], ["song_id", 12], ["created_at", "2020-07-11 17:18:04.985452"], ["updated_at", "2020-07-11 17:18:04.985452"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/playlists" for ::1 at 2020-07-11 13:18:29 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlaylistsController#index as */*
+  [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (3.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 15.2ms | Allocations: 26610)
+
+
+Started POST "/playlists" for ::1 at 2020-07-11 13:18:38 -0400
+Processing by PlaylistsController#create as HTML
+  Parameters: {"name"=>"test", "playlist"=>{"name"=>"test"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mPlaylist Create (1.2ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", "2020-07-11 17:18:38.175962"], ["updated_at", "2020-07-11 17:18:38.175962"]]
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/controllers/playlists_controller.rb:21:in `create'
+Completed 201 Created in 11ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 4066)
+
+
+Started POST "/songs" for ::1 at 2020-07-11 13:18:48 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"artist_name"=>"test", "title"=>"mal36332", "url"=>"https://dashboard.heroku.com/apps", "playlist_id"=>"1", "song"=>{"title"=>"mal36332", "artist_name"=>"test", "url"=>"https://dashboard.heroku.com/apps"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "mal36332"], ["artist_name", "test"], ["url", "https://dashboard.heroku.com/apps"], ["created_at", "2020-07-11 17:18:48.034077"], ["updated_at", "2020-07-11 17:18:48.034077"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mLedger Load (0.2ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 13]]
+  ↳ app/controllers/songs_controller.rb:21:in `create'
+Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 3968)
+
+
+Started POST "/ledgers" for ::1 at 2020-07-11 13:18:48 -0400
+Processing by LedgersController#create as HTML
+  Parameters: {"song_id"=>13, "playlist_id"=>"1", "ledger"=>{"playlist_id"=>"1", "song_id"=>13}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+  [1m[36mLedger Create (0.6ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 1], ["song_id", 13], ["created_at", "2020-07-11 17:18:48.087441"], ["updated_at", "2020-07-11 17:18:48.087441"]]
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+Completed 201 Created in 33ms (Views: 0.6ms | ActiveRecord: 12.1ms | Allocations: 9545)
+
+
+Started POST "/songs" for ::1 at 2020-07-11 13:18:56 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"artist_name"=>"test", "title"=>"test", "url"=>"test", "playlist_id"=>"4", "song"=>{"title"=>"test", "artist_name"=>"test", "url"=>"test"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist_name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test"], ["artist_name", "test"], ["url", "test"], ["created_at", "2020-07-11 17:18:56.925063"], ["updated_at", "2020-07-11 17:18:56.925063"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mLedger Load (0.2ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."song_id" = $1[0m  [["song_id", 14]]
+  ↳ app/controllers/songs_controller.rb:21:in `create'
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 3586)
+
+
+Started POST "/ledgers" for ::1 at 2020-07-11 13:18:56 -0400
+Processing by LedgersController#create as HTML
+  Parameters: {"song_id"=>14, "playlist_id"=>"4", "ledger"=>{"playlist_id"=>"4", "song_id"=>14}}
+  [1m[35m (8.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+  [1m[36mPlaylist Load (2.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+  [1m[36mLedger Create (0.7ms)[0m  [1m[32mINSERT INTO "ledgers" ("playlist_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["playlist_id", 4], ["song_id", 14], ["created_at", "2020-07-11 17:18:56.963892"], ["updated_at", "2020-07-11 17:18:56.963892"]]
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ledgers_controller.rb:22:in `create'
+Completed 201 Created in 23ms (Views: 0.6ms | ActiveRecord: 12.1ms | Allocations: 4969)
+
+
+Started GET "/playlists" for ::1 at 2020-07-11 13:19:00 -0400
+Processing by PlaylistsController#index as */*
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 7243)
+
+
+Started GET "/playlists" for ::1 at 2020-07-11 13:19:04 -0400
+Processing by PlaylistsController#index as */*
+  [1m[36mPlaylist Load (3.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (5.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (11.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (9.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 44ms (Views: 0.1ms | ActiveRecord: 30.3ms | Allocations: 7224)
+
+
+Started GET "/playlists" for ::1 at 2020-07-11 13:19:11 -0400
+Processing by PlaylistsController#index as */*
+  [1m[36mPlaylist Load (35.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (1.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (5.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (10.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 70ms (Views: 0.1ms | ActiveRecord: 52.7ms | Allocations: 7230)
+
+
+Started GET "/playlists" for ::1 at 2020-07-11 13:19:16 -0400
+Processing by PlaylistsController#index as */*
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (1.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (10.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 13.0ms | Allocations: 7226)
+
+
+Started GET "/playlists" for ::1 at 2020-07-11 13:19:23 -0400
+Processing by PlaylistsController#index as */*
+  [1m[36mPlaylist Load (1.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (14.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (1.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+  [1m[36mSong Load (3.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "ledgers" ON "songs"."id" = "ledgers"."song_id" WHERE "ledgers"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  ↳ app/controllers/playlists_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 21.4ms | Allocations: 7224)
+
+

@@ -49,7 +49,18 @@ Song.create([
         "title": "Summer Of 69",
         "artist_name": "Bryan Adams"
     },
+    {
+        "title": "Sunday Best",
+        "artist_name": "Surfaces",
+        "url": "https://www.youtube.com/watch?v=_83KqwEEGw4"
+    },
+    {
+        "title": "Toosie Slide",
+        "artist_name": "Drake",
+        "url": "https://www.youtube.com/watch?v=xWggTb45brM"
+    },
 
+    
 
 ])
 
@@ -60,6 +71,9 @@ Playlist.create([
     },
     {
         "name": "The Top 10 80's"
+    },
+    {
+        "name": "Top 2020"
     }
 ])
 
@@ -96,6 +110,14 @@ Ledger.create([
         "playlist_id":1,
         "song_id":8
     },
+    {
+        "playlist_id": 3,
+        "song_id": 11
+    },
+    {
+        "playlist_id": 3,
+        "song_id": 12
+    }
 
    
 ])

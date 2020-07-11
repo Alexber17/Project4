@@ -159,7 +159,7 @@ class Playlist extends Component {
                         <div className="col-sm-11">
                             <input type='text'  required value={this.state.title} className='form-control' id='title' onChange={this.handleChange}/>
                         </div>
-                        <label htmlFor='name' className='col-sm-1 col-form-label' >Url:</label>
+                        <label htmlFor='name' required className='col-sm-1 col-form-label' >Url:</label>
                         <div className="col-sm-11">
                             <input type='text'   value={this.state.url} className='form-control' id='url' onChange={this.handleChange}/>
                         </div>
